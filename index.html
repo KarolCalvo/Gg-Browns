@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta etiquetas SEO -->
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Especialistas en micropigmentación y estética avanzada. Servicios de Microblading, Nano Brows, Plasma Fibroblast y Skin Tag Removal.">
+    <meta name="keywords" content="GG Browns, micropigmentación, estética avanzada, microblading, nano brows, plasma fibroblast, skin tag removal, belleza, cuidado de la piel">
+    <title>GG Browns | Micropigmentación y Estética Avanzada</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- Encabezado semántico con Flexbox -->
+    <header class="header-nav">
+        <img src="img/Logo.webp" alt="Logo de GG Browns" class="logo">
+        
+        <nav aria-label="Navegación principal">
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+
+        <!-- Sección Hero -->
+        <section class="hero">
+            <picture>
+                <!-- Imagen para Celulares -->
+                <source media="(max-width: 767px)" srcset="img/hero_mobile.webp">
+                <!-- Imagen para Tablets -->
+                <source media="(max-width: 1023px)" srcset="img/hero_tablet.webp">
+                <!-- Imagen por defecto para Escritorio/PC -->
+                <img src="img/hero_desktop.webp" alt="GG Browns Micropigmentación" class="hero-bg">
+            </picture>
+            
+            <!-- Contenido sobrepuesto -->
+            <div class="hero-contenido">
+                <h1>GG Browns</h1>
+                <p>Especialistas en Micropigmentación y Estética Avanzada</p>
+                <a href="#contacto" class="btn-hero">Agendar Cita</a>
+            </div>
+        </section>
+
+        <!-- Sección Inicio (Corregido a h2) -->
+        <section id="inicio">
+            <h2>GG Browns: Micropigmentación y Estética Avanzada</h2>
+            <p>Especialistas en belleza y cuidado de la piel.</p>
+        </section>
+
+        <!-- Contenedor con Grid para las tarjetas -->
+        <div class="grid-tarjetas">
+            <section id="nosotros" class="tarjeta">
+                <h2>Nosotros</h2>
+                <p>Información sobre el estudio y la experiencia.</p>
+            </section>
+
+            <section id="servicios" class="tarjeta">
+                <h2>Servicios</h2>
+                <p>Microblading, Nano Brows, Plasma Fibroblast y Skin Tag Removal.</p>
+            </section>
+
+            <section id="contacto" class="tarjeta">
+                <h2>Contacto</h2>
+                <p>Formas de comunicarse y agendar citas.</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 GG Browns</p>
+    </footer>
+
+</body>
+</html>
