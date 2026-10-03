@@ -16,7 +16,10 @@
 
     <!-- Encabezado semántico con Flexbox -->
     <header class="header-nav">
-        <img src="img/Logo.webp" alt="Logo de GG Browns" class="logo">
+        <!-- Logo enlazado al inicio -->
+        <a href="#inicio" class="logo-link" title="Volver al inicio">
+            <img src="img/Logo.webp" alt="Logo de GG Browns" class="logo">
+        </a>
         
         <nav aria-label="Navegación principal">
             <ul class="nav-links">
@@ -42,6 +45,9 @@
                 <img src="img/hero_desktop.webp" alt="GG Browns Micropigmentación" class="hero-bg">
             </picture>
             
+            <!-- Capa oscura de superposición -->
+            <div class="hero-overlay"></div>
+
             <!-- Contenido sobrepuesto -->
             <div class="hero-contenido">
                 <h1>GG Browns</h1>
@@ -50,35 +56,101 @@
             </div>
         </section>
 
-        <!-- Sección Inicio (Corregido a h2) -->
-        <section id="inicio">
+        <!-- Sección Inicio -->
+        <section id="inicio" class="seccion-intro">
             <h2>GG Browns: Micropigmentación y Estética Avanzada</h2>
             <p>Especialistas en belleza y cuidado de la piel.</p>
         </section>
 
         <!-- Contenedor con Grid para las tarjetas -->
         <div class="grid-tarjetas">
-            <section id="nosotros" class="tarjeta">
+            <section id="nosotros" class="tarjeta tarjeta-nosotros">
                 <h2>Nosotros</h2>
-                <p>Información sobre el estudio y la experiencia.</p>
+                <p>Información sobre el estudio y la experiencia en <strong>micropigmentación</strong>.</p>
+                <ul>
+                    <li>Atención personalizada</li>
+                    <li>Técnicas avanzadas y materiales certificados</li>
+                </ul>
             </section>
 
-            <section id="servicios" class="tarjeta">
+            <section id="servicios" class="tarjeta tarjeta-servicios">
                 <h2>Servicios</h2>
-                <p>Microblading, Nano Brows, Plasma Fibroblast y Skin Tag Removal.</p>
+                <ul>
+                    <li>
+                        <strong>Microblading & Nano Brows</strong>
+                        Diseño hiperrealista de cejas.
+                    </li>
+                    <li>
+                        <strong>Plasma Fibroblast</strong>
+                        Rejuvenecimiento y tensado de piel.
+                    </li>
+                    <li>
+                        <strong>Skin Tag Removal</strong>
+                        Eliminación segura de imperfecciones.
+                    </li>
+                </ul>
             </section>
 
-            <section id="contacto" class="tarjeta">
-                <h2>Contacto</h2>
-                <p>Formas de comunicarse y agendar citas.</p>
+            <!-- Tarjeta de Contacto con Formulario de Cita -->
+            <section id="contacto" class="tarjeta tarjeta-contacto">
+                <h2>Agendar Cita</h2>
+                <p>Completa tus datos para solicitar una cita o resolver tus dudas:</p>
+
+                <!-- Mensaje visual de confirmación (Oculto por defecto) -->
+                <div id="mensajeExito" class="mensaje-exito" style="display: none;">
+                    ¡Muchas gracias! Tu solicitud de cita ha sido recibida. Nos pondremos en contacto contigo muy pronto.
+                </div>
+
+                <!-- Formulario procesado por JavaScript para evitar HTTP 405 -->
+                <form id="formCita" class="form-cita">
+                    <div class="form-grupo">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej. María López" required>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="telefono">Teléfono / WhatsApp</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="+506 8888-8888" required>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="servicio">Servicio de Interés</label>
+                        <select id="servicio" name="servicio" required>
+                            <option value="" disabled selected>Selecciona un servicio</option>
+                            <option value="microblading">Microblading & Nano Brows</option>
+                            <option value="plasma">Plasma Fibroblast</option>
+                            <option value="skin-tag">Skin Tag Removal</option>
+                            <option value="consulta">Consulta General</option>
+                        </select>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="fecha">Fecha Preferida</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="mensaje">Mensaje o Nota adicional</label>
+                        <textarea id="mensaje" name="mensaje" rows="3" placeholder="¿Tienes alguna preferencia de horario o pregunta?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-enviar">Solicitar Cita</button>
+                </form>
+
+                <div class="contacto-directo">
+                    <p><strong>Teléfono:</strong> <a href="tel:+50688888888">+506 8888-8888</a></p>
+                    <p><strong>Instagram:</strong> <a href="https://instagram.com" target="_blank" rel="noopener">@ggbrowns</a></p>
+                </div>
             </section>
         </div>
     </main>
 
     <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2026 GG Browns</p>
+    <footer class="footer-principal">
+        <p>&copy; 2026 GG Browns. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Archivo JavaScript para interacción -->
+    <script src="script.js"></script>
 </body>
 </html>
