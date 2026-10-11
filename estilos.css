@@ -30,7 +30,6 @@
 
 html {
   scroll-behavior: smooth;
-  /* CORRECCIÓN: Compensación global para la altura del header pegajoso */
   scroll-padding-top: 100px;
 }
 
@@ -40,7 +39,7 @@ body {
   font-family: var(--fuente-texto);
   margin: 0;
   line-height: 1.6;
-  overflow-x: hidden; /* Previene scroll horizontal global */
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -94,6 +93,24 @@ h2 {
   transform: scale(1.03);
 }
 
+/* Estilo por defecto del botón hamburguesa (oculto en pantallas grandes) */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 1.5px solid var(--color-acento);
+  color: var(--color-acento);
+  font-size: 1.5rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:focus-visible {
+  outline: 2px solid var(--color-acento);
+  outline-offset: 3px;
+}
+
 .header-nav .nav-links {
   display: flex;
   flex-wrap: wrap;
@@ -124,16 +141,37 @@ h2 {
   background-color: rgba(200, 157, 88, 0.08);
 }
 
+/* Media Query para pantallas estrechas (Móviles) */
 @media (max-width: 768px) {
   .header-nav {
     padding: 1rem;
     flex-direction: column;
-    gap: 1rem;
+    align-items: stretch;
+    gap: 0.5rem;
   }
 
+  /* Mostrar el botón hamburguesa en móvil */
+  .menu-toggle {
+    display: block;
+    align-self: flex-end;
+    margin-top: -35px; /* Ajusta según tu diseño para alinear con el logo */
+  }
+
+  /* Ocultar los enlaces por defecto en pantallas estrechas */
   .header-nav .nav-links {
-    justify-content: center;
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
     gap: 15px;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--color-borde);
+    margin-top: 1rem;
+  }
+
+  /* Clase que activa JavaScript para mostrar el menú móvil */
+  .header-nav .nav-links.nav-activo {
+    display: flex;
   }
 }
 
